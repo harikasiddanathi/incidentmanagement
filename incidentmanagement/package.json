@@ -1,0 +1,11 @@
+{
+  "name": "incidentmanagement",
+  "version": "1.0.0",
+  "description": "incident management",
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "serverless-client-s3": "^2.0.0",
+    "uuid": "^2.0.3"
+  }
+}

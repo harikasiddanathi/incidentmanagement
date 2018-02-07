@@ -1,0 +1,21 @@
+﻿<div class="col-md-6 col-md-offset-3">
+    <h2>Edit Incident</h2>
+    <form name="form"  role="form">
+    <!-- <p>response: {{listresponse}}</p> -->
+       <p>Name: <input id="Name" type="text" placeholder="Name" ng-model="name" value="{{name}}"/></p>
+       <p>uid: <input id="uid"  type="text" ng-disabled="true" placeholder="uid" ng-model="uid" value={{uid}}/></p>
+       <p>Created At: <input id="createdAt" type="text" ng-disabled="true" placeholder="createdAt" ng-model="createdAt" value={{createdAt}}/></p>
+         <p>Priority: <select ng-model="priority" ng-options="x for x in listresponse" value={{priority}}>
+</select></p>
+<p>Component: <select ng-model="component" ng-options="x for x in componentlist" value="{{value}}">
+</select></p>
+<p>Description: <input id="description" type="text" placeholder="incident description" ng-model="description"/></p>
+          <div  ng-click="editincident(priority,description,component,name)"  >
+
+<a href="#/" class="btn btn-primary" >SUBMIT</a>
+</div>
+          <div class="form-actions">
+            <a href="#/" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>

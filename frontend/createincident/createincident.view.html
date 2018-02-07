@@ -1,0 +1,19 @@
+﻿<div class="col-md-6 col-md-offset-3">
+    <h2>Create Incident</h2>
+    <form name="form"  role="form">
+    <!-- <p>response: {{listresponse}}</p> -->
+<p>Name: <input id="Name" type="text" placeholder="Name" ng-model="name"/></p>         
+<p>Priority: <select ng-model="priority" ng-options="x for x in listresponse">
+<p>Component: <select ng-model="component" ng-options="x for x in componentlist">
+</select></p>
+</select></p>
+          <p>Description: <input id="description" type="text" placeholder="incident description" ng-model="description"/></p>
+          <div  ng-click="createincident(priority,description,component,name)"  >
+
+<a href="#/" class="btn btn-primary" >SUBMIT</a>
+</div>
+          <div class="form-actions">
+            <a href="#/" class="btn btn-link">Cancel</a>
+        </div>
+    </form>
+</div>
