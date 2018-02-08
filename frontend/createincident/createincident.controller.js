@@ -11,7 +11,7 @@
        $scope.componentlist = ["API", "SMS", "Voice", "Tools", "AWS", "Carrier", "Stripe"];
        var prilist = [];
        $scope.listresponse = "initial";
-            $http.get('https://3tp1mm5v80.execute-api.us-east-1.amazonaws.com/dev/im'
+            $http.get('https://vveam9hlyh.execute-api.us-east-1.amazonaws.com/dev/im'
             ).success(function(data, status, headers, config){console.log("success");
             var a = JSON.stringify(data);         
     for (var i = 0, length = data.length; i < length; i++) {
@@ -25,8 +25,10 @@
 
     });
 
+
+
       $scope.createincident = function (priority,description,component,name) {
-        $http.post('https://3tp1mm5v80.execute-api.us-east-1.amazonaws.com/dev/im', {"description": description, "priority": priority,"name": name,"component": component
+        $http.post('https://vveam9hlyh.execute-api.us-east-1.amazonaws.com/dev/im', {"description": description, "priority": priority,"name": name,"component": component
 }
             ).success(function(data, status, headers, config){
               console.log("success");
@@ -36,7 +38,6 @@
     });
 
       };
-      
 
 
 }

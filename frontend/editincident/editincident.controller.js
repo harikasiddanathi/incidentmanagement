@@ -20,7 +20,7 @@
        $scope.component = options.component;
        var prilist = [];
        $scope.listresponse = "initial";
-            $http.get('https://3tp1mm5v80.execute-api.us-east-1.amazonaws.com/dev/im'
+            $http.get('https://vveam9hlyh.execute-api.us-east-1.amazonaws.com/dev/im'
             ).success(function(data, status, headers, config){console.log("success");
             var a = JSON.stringify(data);         
     for (var i = 0, length = data.length; i < length; i++) {
@@ -35,7 +35,7 @@
     });
 
       $scope.editincident = function (priority,description,component,name) {
-        $http.put('https://3tp1mm5v80.execute-api.us-east-1.amazonaws.com/dev/im/' + uid, {"description": description, "priority": priority,"name": name,"component": component}, {headers: {'Content-Type': 'application/json'}} 
+        $http.put('https://vveam9hlyh.execute-api.us-east-1.amazonaws.com/dev/im/' + uid, {"description": description, "priority": priority,"name": name,"component": component}, {headers: {'Content-Type': 'application/json'}} 
             ).success(function(data, status, headers, config){
               console.log("success");
 

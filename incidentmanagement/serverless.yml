@@ -8,6 +8,7 @@ provider:
   environment:
     DYNAMODB_TABLE: incidents
     PRIORITY_DYNAMODB_TABLE: priorities
+    USERS_DYNAMODB_TABLE: users
   iamRoleStatements:
     - Effect: Allow
       Action:
@@ -53,8 +54,40 @@ functions:
           method: get
           cors: true
 
+  userscreate:
+    handler: users/create.create
+    events:
+      - http:
+          path: users
+          method: post
+          cors: true
+
+  usersget:
+    handler: users/get.get
+    events:
+      - http:
+          path: users/{username}
+          method: get
+          cors: true
+
 resources:
   Resources:
+    Users:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: username
+            AttributeType: S
+        KeySchema:
+          -
+            AttributeName: username
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:provider.environment.USERS_DYNAMODB_TABLE}
     Priority:
       Type: 'AWS::DynamoDB::Table'
       DeletionPolicy: Retain
