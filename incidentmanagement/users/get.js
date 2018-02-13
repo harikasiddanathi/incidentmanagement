@@ -19,7 +19,7 @@ module.exports.get = (event, context, callback) => {
       console.error(error);
       callback(null, {
         statusCode: error.statusCode || 501,
-        headers: { 'Content-Type': 'text/plain' },
+        headers: { 'Content-Type': 'text/plain', "Access-Control-Allow-Origin" : "*" },
         body: 'Couldn\'t fetch the todo item.',
       });
       return;
@@ -30,13 +30,13 @@ console.log(JSON.stringify(result.Item));
     // create a response
      response = {
       statusCode: 200,
-     
+      headers: { "Access-Control-Allow-Origin" : "*" },
       body: JSON.stringify(result.Item),
     };}
     else {
      response = {
       statusCode: 200,
-     
+      headers: { "Access-Control-Allow-Origin" : "*" },
       body: "notpresent",
     };
     }

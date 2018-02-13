@@ -1,8 +1,8 @@
 {
   "service": {
-    "service": "incidentmanagement",
+    "service": "final",
     "serviceObject": {
-      "name": "incidentmanagement"
+      "name": "final"
     },
     "provider": {
       "stage": "dev",
@@ -11,9 +11,9 @@
       "name": "aws",
       "runtime": "nodejs6.10",
       "environment": {
-        "DYNAMODB_TABLE": "incidents",
-        "PRIORITY_DYNAMODB_TABLE": "priorities",
-        "USERS_DYNAMODB_TABLE": "users"
+        "DYNAMODB_TABLE": "incidentsfinal",
+        "PRIORITY_DYNAMODB_TABLE": "prioritiesfinal",
+        "USERS_DYNAMODB_TABLE": "usersfinal"
       },
       "iamRoleStatements": [
         {
@@ -41,37 +41,37 @@
           "CreateLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/incidentmanagement-dev-create"
+              "LogGroupName": "/aws/lambda/final-dev-create"
             }
           },
           "ListLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/incidentmanagement-dev-list"
+              "LogGroupName": "/aws/lambda/final-dev-list"
             }
           },
           "UpdateLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/incidentmanagement-dev-update"
+              "LogGroupName": "/aws/lambda/final-dev-update"
             }
           },
           "IncidentsdisplayLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/incidentmanagement-dev-incidentsdisplay"
+              "LogGroupName": "/aws/lambda/final-dev-incidentsdisplay"
             }
           },
           "UserscreateLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/incidentmanagement-dev-userscreate"
+              "LogGroupName": "/aws/lambda/final-dev-userscreate"
             }
           },
           "UsersgetLogGroup": {
             "Type": "AWS::Logs::LogGroup",
             "Properties": {
-              "LogGroupName": "/aws/lambda/incidentmanagement-dev-usersget"
+              "LogGroupName": "/aws/lambda/final-dev-usersget"
             }
           },
           "IamRoleLambdaExecution": {
@@ -100,7 +100,7 @@
                       "-",
                       [
                         "dev",
-                        "incidentmanagement",
+                        "final",
                         "lambda"
                       ]
                     ]
@@ -115,22 +115,22 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/incidentmanagement-dev-create:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/final-dev-create:*"
                           },
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/incidentmanagement-dev-list:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/final-dev-list:*"
                           },
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/incidentmanagement-dev-update:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/final-dev-update:*"
                           },
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/incidentmanagement-dev-incidentsdisplay:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/final-dev-incidentsdisplay:*"
                           },
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/incidentmanagement-dev-userscreate:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/final-dev-userscreate:*"
                           },
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/incidentmanagement-dev-usersget:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/final-dev-usersget:*"
                           }
                         ]
                       },
@@ -141,22 +141,22 @@
                         ],
                         "Resource": [
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/incidentmanagement-dev-create:*:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/final-dev-create:*:*"
                           },
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/incidentmanagement-dev-list:*:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/final-dev-list:*:*"
                           },
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/incidentmanagement-dev-update:*:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/final-dev-update:*:*"
                           },
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/incidentmanagement-dev-incidentsdisplay:*:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/final-dev-incidentsdisplay:*:*"
                           },
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/incidentmanagement-dev-userscreate:*:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/final-dev-userscreate:*:*"
                           },
                           {
-                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/incidentmanagement-dev-usersget:*:*"
+                            "Fn::Sub": "arn:aws:logs:${AWS::Region}:${AWS::AccountId}:log-group:/aws/lambda/final-dev-usersget:*:*"
                           }
                         ]
                       },
@@ -172,7 +172,7 @@
                 "Fn::Join": [
                   "-",
                   [
-                    "incidentmanagement",
+                    "final",
                     "dev",
                     "us-east-1",
                     "lambdaRole"
@@ -188,9 +188,9 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/incidentmanagement/dev/1518123677366-2018-02-08T21:01:17.366Z/incidentmanagement.zip"
+                "S3Key": "serverless/final/dev/1518478736433-2018-02-12T23:38:56.433Z/final.zip"
               },
-              "FunctionName": "incidentmanagement-dev-create",
+              "FunctionName": "final-dev-create",
               "Handler": "im/create.create",
               "MemorySize": 1024,
               "Role": {
@@ -203,9 +203,9 @@
               "Timeout": 6,
               "Environment": {
                 "Variables": {
-                  "DYNAMODB_TABLE": "incidents",
-                  "PRIORITY_DYNAMODB_TABLE": "priorities",
-                  "USERS_DYNAMODB_TABLE": "users"
+                  "DYNAMODB_TABLE": "incidentsfinal",
+                  "PRIORITY_DYNAMODB_TABLE": "prioritiesfinal",
+                  "USERS_DYNAMODB_TABLE": "usersfinal"
                 }
               }
             },
@@ -214,14 +214,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "CreateLambdaVersionlt3zNEziIWFXhqVQGhQ2vRRSLzz8XHkwVQjMKQptkg": {
+          "CreateLambdaVersionFy4TwNKRP4Nt6csqcRTjS2kAZpcG1FV7QbvVyNKDM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "CreateLambdaFunction"
               },
-              "CodeSha256": "0czUFahMLpQGnfgWVhhxuI8rf0OuN5gHCu4aBrFukIc="
+              "CodeSha256": "f5URfjD2mZpAUBVlZRIdneUXYdxKKTV05U0yi/dgkrM="
             }
           },
           "ListLambdaFunction": {
@@ -231,9 +231,9 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/incidentmanagement/dev/1518123677366-2018-02-08T21:01:17.366Z/incidentmanagement.zip"
+                "S3Key": "serverless/final/dev/1518478736433-2018-02-12T23:38:56.433Z/final.zip"
               },
-              "FunctionName": "incidentmanagement-dev-list",
+              "FunctionName": "final-dev-list",
               "Handler": "im/list.list",
               "MemorySize": 1024,
               "Role": {
@@ -246,9 +246,9 @@
               "Timeout": 6,
               "Environment": {
                 "Variables": {
-                  "DYNAMODB_TABLE": "incidents",
-                  "PRIORITY_DYNAMODB_TABLE": "priorities",
-                  "USERS_DYNAMODB_TABLE": "users"
+                  "DYNAMODB_TABLE": "incidentsfinal",
+                  "PRIORITY_DYNAMODB_TABLE": "prioritiesfinal",
+                  "USERS_DYNAMODB_TABLE": "usersfinal"
                 }
               }
             },
@@ -257,14 +257,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "ListLambdaVersionXHVNCtcaoKKH5vJiMSmWkFBWRWqzt7H1zHSLdatmiI": {
+          "ListLambdaVersionFbYo4LcVeWue7J5qj7UpVBTDWWLV0tLxZXhh8DbQ": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "ListLambdaFunction"
               },
-              "CodeSha256": "0czUFahMLpQGnfgWVhhxuI8rf0OuN5gHCu4aBrFukIc="
+              "CodeSha256": "f5URfjD2mZpAUBVlZRIdneUXYdxKKTV05U0yi/dgkrM="
             }
           },
           "UpdateLambdaFunction": {
@@ -274,9 +274,9 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/incidentmanagement/dev/1518123677366-2018-02-08T21:01:17.366Z/incidentmanagement.zip"
+                "S3Key": "serverless/final/dev/1518478736433-2018-02-12T23:38:56.433Z/final.zip"
               },
-              "FunctionName": "incidentmanagement-dev-update",
+              "FunctionName": "final-dev-update",
               "Handler": "im/update.update",
               "MemorySize": 1024,
               "Role": {
@@ -289,9 +289,9 @@
               "Timeout": 6,
               "Environment": {
                 "Variables": {
-                  "DYNAMODB_TABLE": "incidents",
-                  "PRIORITY_DYNAMODB_TABLE": "priorities",
-                  "USERS_DYNAMODB_TABLE": "users"
+                  "DYNAMODB_TABLE": "incidentsfinal",
+                  "PRIORITY_DYNAMODB_TABLE": "prioritiesfinal",
+                  "USERS_DYNAMODB_TABLE": "usersfinal"
                 }
               }
             },
@@ -300,14 +300,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "UpdateLambdaVersionkzotyWzyzrg0txCkljjm1sOD6V2gmtg7h9n7umXNXJg": {
+          "UpdateLambdaVersionWrZ8hncg5BgzkBgplVS1tiplIRISXJLZ4mbrEpHZ80A": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UpdateLambdaFunction"
               },
-              "CodeSha256": "0czUFahMLpQGnfgWVhhxuI8rf0OuN5gHCu4aBrFukIc="
+              "CodeSha256": "f5URfjD2mZpAUBVlZRIdneUXYdxKKTV05U0yi/dgkrM="
             }
           },
           "IncidentsdisplayLambdaFunction": {
@@ -317,9 +317,9 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/incidentmanagement/dev/1518123677366-2018-02-08T21:01:17.366Z/incidentmanagement.zip"
+                "S3Key": "serverless/final/dev/1518478736433-2018-02-12T23:38:56.433Z/final.zip"
               },
-              "FunctionName": "incidentmanagement-dev-incidentsdisplay",
+              "FunctionName": "final-dev-incidentsdisplay",
               "Handler": "im/incidentsdisplay.incidentsdisplay",
               "MemorySize": 1024,
               "Role": {
@@ -332,9 +332,9 @@
               "Timeout": 6,
               "Environment": {
                 "Variables": {
-                  "DYNAMODB_TABLE": "incidents",
-                  "PRIORITY_DYNAMODB_TABLE": "priorities",
-                  "USERS_DYNAMODB_TABLE": "users"
+                  "DYNAMODB_TABLE": "incidentsfinal",
+                  "PRIORITY_DYNAMODB_TABLE": "prioritiesfinal",
+                  "USERS_DYNAMODB_TABLE": "usersfinal"
                 }
               }
             },
@@ -343,14 +343,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "IncidentsdisplayLambdaVersion4FMWFhAtuExN4AL8A70cDmzG19donUZaVTyr2ujSjs": {
+          "IncidentsdisplayLambdaVersionwbnMAzkSqATHySS1SJ074zjjgoWH9tOp4KY61eQIeM": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "IncidentsdisplayLambdaFunction"
               },
-              "CodeSha256": "0czUFahMLpQGnfgWVhhxuI8rf0OuN5gHCu4aBrFukIc="
+              "CodeSha256": "f5URfjD2mZpAUBVlZRIdneUXYdxKKTV05U0yi/dgkrM="
             }
           },
           "UserscreateLambdaFunction": {
@@ -360,9 +360,9 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/incidentmanagement/dev/1518123677366-2018-02-08T21:01:17.366Z/incidentmanagement.zip"
+                "S3Key": "serverless/final/dev/1518478736433-2018-02-12T23:38:56.433Z/final.zip"
               },
-              "FunctionName": "incidentmanagement-dev-userscreate",
+              "FunctionName": "final-dev-userscreate",
               "Handler": "users/create.create",
               "MemorySize": 1024,
               "Role": {
@@ -375,9 +375,9 @@
               "Timeout": 6,
               "Environment": {
                 "Variables": {
-                  "DYNAMODB_TABLE": "incidents",
-                  "PRIORITY_DYNAMODB_TABLE": "priorities",
-                  "USERS_DYNAMODB_TABLE": "users"
+                  "DYNAMODB_TABLE": "incidentsfinal",
+                  "PRIORITY_DYNAMODB_TABLE": "prioritiesfinal",
+                  "USERS_DYNAMODB_TABLE": "usersfinal"
                 }
               }
             },
@@ -386,14 +386,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "UserscreateLambdaVersionlmCjPbvLQdlX5zgvbuThLn2DajoI5vstojrO6Nzk": {
+          "UserscreateLambdaVersionVgAtQJCTpUI9w5FHd0HMrShOtrlaLn4LKT2mPUpye3Q": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UserscreateLambdaFunction"
               },
-              "CodeSha256": "0czUFahMLpQGnfgWVhhxuI8rf0OuN5gHCu4aBrFukIc="
+              "CodeSha256": "f5URfjD2mZpAUBVlZRIdneUXYdxKKTV05U0yi/dgkrM="
             }
           },
           "UsersgetLambdaFunction": {
@@ -403,9 +403,9 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/incidentmanagement/dev/1518123677366-2018-02-08T21:01:17.366Z/incidentmanagement.zip"
+                "S3Key": "serverless/final/dev/1518478736433-2018-02-12T23:38:56.433Z/final.zip"
               },
-              "FunctionName": "incidentmanagement-dev-usersget",
+              "FunctionName": "final-dev-usersget",
               "Handler": "users/get.get",
               "MemorySize": 1024,
               "Role": {
@@ -418,9 +418,9 @@
               "Timeout": 6,
               "Environment": {
                 "Variables": {
-                  "DYNAMODB_TABLE": "incidents",
-                  "PRIORITY_DYNAMODB_TABLE": "priorities",
-                  "USERS_DYNAMODB_TABLE": "users"
+                  "DYNAMODB_TABLE": "incidentsfinal",
+                  "PRIORITY_DYNAMODB_TABLE": "prioritiesfinal",
+                  "USERS_DYNAMODB_TABLE": "usersfinal"
                 }
               }
             },
@@ -429,20 +429,20 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "UsersgetLambdaVersionyDdU4ddPGnFNs2DGYEmiKFww8wX2kF6pTNxJFh364Ac": {
+          "UsersgetLambdaVersiont0sArvFRUV3KgWjNlgp3V3amd6MMXO6hEgLXzoSA4s": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "UsersgetLambdaFunction"
               },
-              "CodeSha256": "0czUFahMLpQGnfgWVhhxuI8rf0OuN5gHCu4aBrFukIc="
+              "CodeSha256": "f5URfjD2mZpAUBVlZRIdneUXYdxKKTV05U0yi/dgkrM="
             }
           },
           "ApiGatewayRestApi": {
             "Type": "AWS::ApiGateway::RestApi",
             "Properties": {
-              "Name": "dev-incidentmanagement",
+              "Name": "dev-final",
               "EndpointConfiguration": {
                 "Types": [
                   "EDGE"
@@ -983,7 +983,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1518123677445": {
+          "ApiGatewayDeployment1518478736817": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -1218,7 +1218,7 @@
                 "ReadCapacityUnits": 1,
                 "WriteCapacityUnits": 1
               },
-              "TableName": "users"
+              "TableName": "usersfinal"
             }
           },
           "Priority": {
@@ -1241,7 +1241,7 @@
                 "ReadCapacityUnits": 1,
                 "WriteCapacityUnits": 1
               },
-              "TableName": "priorities"
+              "TableName": "prioritiesfinal"
             }
           },
           "Incidents": {
@@ -1264,7 +1264,7 @@
                 "ReadCapacityUnits": 1,
                 "WriteCapacityUnits": 1
               },
-              "TableName": "incidents"
+              "TableName": "incidentsfinal"
             }
           }
         },
@@ -1277,37 +1277,37 @@
           "CreateLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "CreateLambdaVersionlt3zNEziIWFXhqVQGhQ2vRRSLzz8XHkwVQjMKQptkg"
+              "Ref": "CreateLambdaVersionFy4TwNKRP4Nt6csqcRTjS2kAZpcG1FV7QbvVyNKDM"
             }
           },
           "ListLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "ListLambdaVersionXHVNCtcaoKKH5vJiMSmWkFBWRWqzt7H1zHSLdatmiI"
+              "Ref": "ListLambdaVersionFbYo4LcVeWue7J5qj7UpVBTDWWLV0tLxZXhh8DbQ"
             }
           },
           "UpdateLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UpdateLambdaVersionkzotyWzyzrg0txCkljjm1sOD6V2gmtg7h9n7umXNXJg"
+              "Ref": "UpdateLambdaVersionWrZ8hncg5BgzkBgplVS1tiplIRISXJLZ4mbrEpHZ80A"
             }
           },
           "IncidentsdisplayLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "IncidentsdisplayLambdaVersion4FMWFhAtuExN4AL8A70cDmzG19donUZaVTyr2ujSjs"
+              "Ref": "IncidentsdisplayLambdaVersionwbnMAzkSqATHySS1SJ074zjjgoWH9tOp4KY61eQIeM"
             }
           },
           "UserscreateLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UserscreateLambdaVersionlmCjPbvLQdlX5zgvbuThLn2DajoI5vstojrO6Nzk"
+              "Ref": "UserscreateLambdaVersionVgAtQJCTpUI9w5FHd0HMrShOtrlaLn4LKT2mPUpye3Q"
             }
           },
           "UsersgetLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "UsersgetLambdaVersionyDdU4ddPGnFNs2DGYEmiKFww8wX2kF6pTNxJFh364Ac"
+              "Ref": "UsersgetLambdaVersiont0sArvFRUV3KgWjNlgp3V3amd6MMXO6hEgLXzoSA4s"
             }
           },
           "ServiceEndpoint": {
@@ -1345,6 +1345,17 @@
       },
       "vpc": {}
     },
+    "custom": {
+      "scripts": {
+        "commands": {
+          "replace": "sh getapiid.sh final-dev"
+        }
+      },
+      "client": {
+        "bucketName": "harika-test",
+        "distributionFolder": "client/dist"
+      }
+    },
     "functions": {
       "create": {
         "handler": "im/create.create",
@@ -1376,7 +1387,7 @@
             }
           }
         ],
-        "name": "incidentmanagement-dev-create",
+        "name": "final-dev-create",
         "package": {},
         "vpc": {}
       },
@@ -1410,7 +1421,7 @@
             }
           }
         ],
-        "name": "incidentmanagement-dev-list",
+        "name": "final-dev-list",
         "package": {},
         "vpc": {}
       },
@@ -1444,7 +1455,7 @@
             }
           }
         ],
-        "name": "incidentmanagement-dev-update",
+        "name": "final-dev-update",
         "package": {},
         "vpc": {}
       },
@@ -1478,7 +1489,7 @@
             }
           }
         ],
-        "name": "incidentmanagement-dev-incidentsdisplay",
+        "name": "final-dev-incidentsdisplay",
         "package": {},
         "vpc": {}
       },
@@ -1512,7 +1523,7 @@
             }
           }
         ],
-        "name": "incidentmanagement-dev-userscreate",
+        "name": "final-dev-userscreate",
         "package": {},
         "vpc": {}
       },
@@ -1546,7 +1557,7 @@
             }
           }
         ],
-        "name": "incidentmanagement-dev-usersget",
+        "name": "final-dev-usersget",
         "package": {},
         "vpc": {}
       }
@@ -1573,7 +1584,7 @@
               "ReadCapacityUnits": 1,
               "WriteCapacityUnits": 1
             },
-            "TableName": "users"
+            "TableName": "usersfinal"
           }
         },
         "Priority": {
@@ -1596,7 +1607,7 @@
               "ReadCapacityUnits": 1,
               "WriteCapacityUnits": 1
             },
-            "TableName": "priorities"
+            "TableName": "prioritiesfinal"
           }
         },
         "Incidents": {
@@ -1619,16 +1630,16 @@
               "ReadCapacityUnits": 1,
               "WriteCapacityUnits": 1
             },
-            "TableName": "incidents"
+            "TableName": "incidentsfinal"
           }
         }
       },
       "Outputs": {}
     },
-    "artifact": "/home/harika/examples/incidentmanagement/.serverless/incidentmanagement.zip"
+    "artifact": "/home/harika/final/incidentmanagement/incidentmanagement/.serverless/final.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/incidentmanagement/dev/1518123677366-2018-02-08T21:01:17.366Z",
-    "artifact": "incidentmanagement.zip"
+    "artifactDirectoryName": "serverless/final/dev/1518478736433-2018-02-12T23:38:56.433Z",
+    "artifact": "final.zip"
   }
 }

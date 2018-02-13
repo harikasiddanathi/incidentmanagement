@@ -20,6 +20,18 @@ provider:
         - dynamodb:DeleteItem
       Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/*"
 
+plugins:
+  - serverless-finch
+  - serverless-plugin-scripts
+
+custom:
+  scripts:
+    commands:
+      replace: sh getapiid.sh ${opt:stage, self:provider.stage}-${self:service}
+  client:
+    bucketName: incident.com
+    distributionFolder: client/dist # (Optional) The location of your website. This defaults to client/dist
+
 
 functions:
   create:

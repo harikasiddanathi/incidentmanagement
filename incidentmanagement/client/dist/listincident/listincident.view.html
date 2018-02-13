@@ -1,0 +1,31 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2>INCIDENTS LIST</h2>
+    <form name="form"  role="form">
+  
+    </form>
+  
+
+    <table id="customers">
+    <tr>
+  <td>UUID</td>
+  <td>CREATEDAT</td>
+  <td>NAME</td>
+  <td>PRIORITY</td>
+  <td>DESCRIPTION</td>
+  <td>COMPONENT</td>
+  <td>EDIT</td>
+  </tr>
+<tr ng-repeat="x in listresponse">
+  <td>{{x.uid}}</td>
+  <td>{{x.createdAt}}</td>
+  <td>{{x.name}}</td>
+  <td>{{x.priority}}</td>
+  <td>{{x.description}}</td>
+  <td>{{x.component}}</td>
+  <td ng-click="setparam(x)"  >
+   <a href="#/editincident" class="btn btn-primary" >EDIT</a>
+  </td>
+</tr>
+</table>
+<a href="#/" class="btn btn-primary" >HOME</a>
+</div>
