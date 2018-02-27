@@ -1,4 +1,4 @@
-## incidentmanagement
+# IncidentManagement
 To create, update and list incidents along with login and register to the site enabled.
 
 # Pre-requisites
